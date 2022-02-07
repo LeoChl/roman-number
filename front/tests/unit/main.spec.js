@@ -7,8 +7,10 @@ beforeEach(() => {
   wrapper = shallowMount(Main, {
     data: {
       input: 0,
-      numberRoman: '',
-      errorMsg: '',
+      response: {
+        number: '',
+        error: ''
+      },
     }
   })
 });
@@ -24,8 +26,8 @@ describe('Main.vue', () => {
 
   it('set data on mount', () => {
     expect(wrapper.vm.input).toBe(0);
-    expect(wrapper.vm.numberRoman).toBe('');
-    expect(wrapper.vm.errorMsg).toBe('');
+    expect(wrapper.vm.response.number).toBe('');
+    expect(wrapper.vm.response.error).toBe('');
   });
 
   it('has a button', () => {
